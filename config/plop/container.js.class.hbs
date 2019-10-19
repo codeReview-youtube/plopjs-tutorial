@@ -1,0 +1,35 @@
+{{#if style}}
+
+import style from "./{{name}}.style.scss";
+{{/if}}
+
+import React, { {{ superClass }} } from "react";
+import { connect } from "react-redux";
+
+/**
+* {{ name }}
+*/
+class {{ name }} extends {{ superClass }} {
+{{#if hasState}}
+// Initial state
+state = {
+dummy: "Hello",
+};
+
+{{/if}}
+/**
+* Render
+*/
+render() {
+const { content } = this.props;
+
+return (
+<p{{#if style}} className={style.element}{{/if}}>{content}</p>
+  );
+  }
+  }
+
+  const mapStateToProps = (state: *) => ({})
+  const mapDispatchToProps = (state: *) => ({})
+
+  export default connect(mapStateToProps, mapDispatchToProps)({{ name  }})

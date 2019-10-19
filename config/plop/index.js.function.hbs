@@ -1,0 +1,13 @@
+{{#if style}}
+import style from "./{{name}}.style.scss"
+{{/if}}
+
+import React from 'react';
+/**
+* {{name}}
+*/
+
+
+const {{ name }} = ({ children}) => <p {{#if style}} className={style.element}{{/if}}>{children}</p>
+
+export default {{name}};
